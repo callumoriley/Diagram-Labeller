@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 from PIL import Image, ImageTk
 
 img = None
@@ -6,8 +7,10 @@ img = None
 MARGIN = 100 # can be this many pixels away from the correct position in any direction
 HORIZONTAL_PADDING = 300
 VERTICAL_PADDING = 100
-IMAGE_FILE_NAME = "image.png"
-FILE_NAME = "points.csv"
+IMAGE_FILE_NAME = filedialog.askopenfilename(
+        title="Select image",
+        filetypes=[("PNG files", "*.png")])
+FILE_NAME = IMAGE_FILE_NAME[:-3]+"csv"
 SPACING_BETWEEN_LABELS = 50
 
 # CHANGE TO BE A LABEL THAT'S MOVING INSTEAD OF AN IMAGE

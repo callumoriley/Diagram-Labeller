@@ -1,9 +1,11 @@
 import tkinter as tk
-from tkinter import simpledialog
+from tkinter import filedialog, simpledialog
 from PIL import Image, ImageTk
 
-IMAGE_FILE_NAME = "image.png"
-SAVE_FILE_NAME = "points.csv"
+IMAGE_FILE_NAME = filedialog.askopenfilename(
+        title="Select image",
+        filetypes=[("PNG files", "*.png")])
+SAVE_FILE_NAME = IMAGE_FILE_NAME[:-3]+"csv"
 IMAGE_SCALE_FACTOR = 1
 
 img = None
